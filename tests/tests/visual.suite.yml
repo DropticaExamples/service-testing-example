@@ -1,0 +1,20 @@
+# Codeception Test Suite Configuration
+#
+# Suite for vieualception tests.
+# Perform tests in browser using the WebDriver.
+
+class_name: VisualTester
+modules:
+    enabled:
+        - WebDriver:
+             host: selenium_ff
+             url: https://www.whitehouse.gov
+             browser: firefox
+             curl:
+                 CURLOPT_TIMEOUT: 1200
+        - \Helper\Visual
+        - VisualCeption:
+            maximumDeviation: 0                                 
+            saveCurrentImageIfFailure: true  
+            report: true
+
